@@ -6,3 +6,60 @@ available in the app when your plugin is enabled.
 If your plugin does not need CSS, delete this file.
 
 */
+
+.floating-box .cm-strong {
+    font-weight: var(--bold-weight);
+}
+
+.floating-box .cm-em {
+    font-style: italic;
+}
+
+.floating-box .cm-strong.cm-em {
+    font-weight: var(--bold-weight);
+    font-style: italic;
+}
+
+.dataviewjs-script-container {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.dataviewjs-script-input {
+    width: 100%;
+}
+
+.dataviewjs-script-input textarea {
+    width: 100%;
+    min-height: 150px;
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+    line-height: 1.5;
+    resize: both;  /* Allow both vertical and horizontal resizing */
+    padding: 8px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+}
+
+.dataviewjs-script-input textarea:focus {
+    outline: none;
+    border-color: var(--interactive-accent);
+    box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+}
+
+/* Override Obsidian's default setting styles */
+.setting-item:not(.setting-item-heading) {
+    border: none;
+    padding: 0;
+}
+
+.setting-item .setting-item-control {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+    width: 100%;
+}
