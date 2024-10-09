@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "daily-note-floating-scoreboard",
+	"name": "Daily Note Floating Scoreboard",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
-	"isDesktopOnly": false
+	"description": "Transform daily note data into a gamification floating scoreboard for KPI tracking and habit building. Integrates with Dataview Fields and allows DataviewJS custom scripts.",
+	"author": "Back of the Napkin Labs",
+	"authorUrl": "https://www.backofthenapkinlabs.com",
+	"fundingUrl": "https://www.backofthenapkinlabs.com",
+	"isDesktopOnly": true
 }

@@ -14,8 +14,6 @@ interface FloatingBoxSettings {
     // Text modification settings
     headerFontSize: number;
     paragraphFontSize: number;
-    boldText: boolean;
-    italicText: boolean;
     todayTextBold: boolean;
 
     // Other settings
@@ -66,8 +64,6 @@ const DEFAULT_SETTINGS: FloatingBoxSettings = {
     daysToShow: 3,
     headerFontSize: 16,
     paragraphFontSize: 14,
-    boldText: false,
-    italicText: false,
     todayTextBold: false,
     noDataMessage: 'N/A',
     dataFields: [
@@ -288,7 +284,7 @@ export default class FloatingBoxPlugin extends Plugin {
                             const displayText = (this.settings.showDisplayAsText || dateIndex === 0) ? `${field.displayName} ` : '';
                             content += `
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                                    <span style="font-size: ${this.settings.paragraphFontSize}px; white-space: nowrap;">${displayText}${fieldData}</span>
+                                    <span style="font-size: ${this.settings.paragraphFontSize}px; white-space: nowrap; ${todayTextStyle}">${displayText}${fieldData}</span>
                                 </div>`;
                         }
                         
@@ -799,28 +795,6 @@ class FloatingBoxSettingTab extends PluginSettingTab {
                     await this.plugin.saveSettings();
                     this.plugin.updateFloatingBoxStyle();
                     this.plugin.updateMinimumSize();
-                }));
-
-        new Setting(containerEl)
-            .setName('Bold Text')
-            .setDesc('Make the text bold in the floating box')
-            .addToggle(toggle => toggle
-                .setValue(this.plugin.settings.boldText)
-                .onChange(async (value) => {
-                    this.plugin.settings.boldText = value;
-                    await this.plugin.saveSettings();
-                    this.plugin.updateFloatingBoxStyle();
-                }));
-
-        new Setting(containerEl)
-            .setName('Italic Text')
-            .setDesc('Make the text italic in the floating box')
-            .addToggle(toggle => toggle
-                .setValue(this.plugin.settings.italicText)
-                .onChange(async (value) => {
-                    this.plugin.settings.italicText = value;
-                    await this.plugin.saveSettings();
-                    this.plugin.updateFloatingBoxStyle();
                 }));
 
         new Setting(containerEl)
